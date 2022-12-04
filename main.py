@@ -22,9 +22,9 @@ ciudad = Ciudad([A, B, C])
 while vias.t < vias.fin:
     print(vias.t, vias.fin)
     vias.t = vias.t + vias.delta
-    lluvia = ([[A.plluvia, 1-A.plluvia]],[])
-    lluvia2 = ([[B.plluvia, 1-B.plluvia]],[])
-    lluvia3 = ([[C.plluvia, 1-C.plluvia]],[])
+    lluvia = ([A.plluvia, 1-A.plluvia],[])
+    lluvia2 = ([B.plluvia, 1-B.plluvia],[])
+    lluvia3 = ([C.plluvia, 1-C.plluvia],[])
     ciudad.update()
 
 
@@ -46,14 +46,16 @@ vias.accidentalidad_Lluvia_Trafico = accidentalidad_Lluvia_Trafico
 
 
 
+
+#Crear diccionario global que tome mis datos bien bellos
+
 mi_diccionario = {"Trafico":trafico_lluvia,"accidentalidad":accidentalidad_Lluvia_Trafico,"Lluvia":lluvia,"mayortiempo":mayortiempo_accidentalidad_}
 vias.mi_diccionario = mi_diccionario
-#Crear diccionario global que tome mis datos bien bellos
-  
+
 
 print("\nProbabilidad total de lluvia para cada ciudad: ")
 print("\nCiudad A: ", end='')
-print(probabilidad_Total(lluvia,True))
+print(probabilidad_Total(trafico_lluvia,True))
 print("\nCiudad B: ", end='')
 print(probabilidad_Total(lluvia2,True))
 print("\nCiudad C: ", end='')
