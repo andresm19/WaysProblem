@@ -1,1 +1,2 @@
 # WaysProblem
+Descripción: Una persona necesita tomar un transporte para desplazarse en la ciudad a su destino, la persona que viaja en transporte público busca que su viaje sea  comodo y rapido, el sitio donde se encuentra actualmente cuenta con tres posibles rutas (“A,B,C”) cada una de estas rutas con características específicas, que acorde con la situación pueden resultar una más ventajosa  que la otra.
