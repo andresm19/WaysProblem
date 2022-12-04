@@ -7,6 +7,9 @@ delta = datetime.timedelta(0, 0, 0, 0, 0, 1, 0)
 fin = datetime.datetime(2022, 12, 2, 0, 0, 0, 0)
 prolluvia = 0.3
 
+accidentalidad_Lluvia_Trafico = tuple()
+mi_diccionario = dict()
+
 random.seed(1)
 
 class Via():
@@ -61,3 +64,94 @@ class Ciudad():
         for via in self.vias:
             via.update()
 
+
+def P(A, Booleano_A ,B, Booleano_B):
+  
+  probabilidad(B, Booleano_B,A, Booleano_A)
+
+  probabilidad_Total()
+  
+
+def probabilidad(B, Booleano_B,A, Booleano_A ):
+  return 0
+
+
+def obtener(A,Boolean_A,dep):
+
+  
+  B=mi_diccionario[A]
+  
+  Listaprob=B[0]
+  if B[1]==[]:
+    if Boolean_A==True:
+   
+      return Listaprob[1]
+    else:
+      
+      return Listaprob[0]
+  else:
+      comparador=[]
+      for i in range(len(dep[0])):
+            
+            if dep[0][i] in B[1]:
+                  n=B[1].index(dep[0][i])
+                  comparador.append(dep[1][i])
+      
+      
+      
+
+      for i in range(int(len(Listaprob)/2)):
+            c=i*2
+            
+
+            if comparador==Listaprob[c]:
+                  if Boolean_A==True:
+                        
+                        return float(Listaprob[c+1][1])
+                  else:
+                        
+                        return float(Listaprob[c+1][0])
+      
+      return probabilidad_Total(accidentalidad_Lluvia_Trafico,True)
+
+
+      
+
+def probabilidad_Total(B, Booleano_B):
+  lista_de_probabilidades=[]    
+ 
+  Listaprob=B[0]
+  dependencias=B[1]
+  if B[1] == []:
+    if Booleano_B==True:
+      return Listaprob[0]
+    else:
+      return Listaprob[1]
+  
+  else:
+    p_acumulado=0 
+    
+    for i in range(int(len(Listaprob)/2)):
+      c=i*2
+      Listaprob[c]
+      
+      prob_c=0
+      if Booleano_B==True:
+            
+            prob_c= float(Listaprob[c+1][0])
+      else:
+            
+            prob_c= float(Listaprob[c+1][1])
+        
+      for j in range(len(dependencias)):
+            
+           
+            prob_c*=obtener(dependencias[j],Listaprob[c][j],[dependencias,Listaprob[c]]) 
+            
+      
+      lista_de_probabilidades.append(prob_c)      
+
+      p_acumulado+=prob_c
+    print(lista_de_probabilidades)
+    return p_acumulado  
+    
